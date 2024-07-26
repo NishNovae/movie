@@ -2,7 +2,11 @@
 
 ## Installation
 ```bash
-$ pip instal git+https://github.com/NishNovae/movie.git
+# main
+$ pip install git+https://github.com/NishNovae/movie.git
+
+# branch
+$ pip install git+https://github.com/NishNovae/movie.git@<BRANCH>
 ```
 
 ## Setting up dev environment
