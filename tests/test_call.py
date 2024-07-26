@@ -21,4 +21,4 @@ def test_req():
 
 def test_req2():
     l = req2dataframe()
-    assert l
+    assert l is not None
