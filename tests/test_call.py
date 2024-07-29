@@ -4,9 +4,9 @@ from src.mov.api.call import *
 import pandas as pd
 
 def test_save2df():
-    save2df()
-    df = pd.read_parquet('/home/nishtala/code/movie_saved/')
-    assert df is not None
+    df = save2df('20241231')
+    assert isinstance(df, pd.DataFrame)
+    assert 'load_dt' in df.columns
 
 def test_hide_key():
     key = get_key()

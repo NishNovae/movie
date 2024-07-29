@@ -2,25 +2,26 @@
 import requests
 import os
 import pandas as pd
-from datetime import datetime
+#from datetime import datetime
 
 PARQ_PATH="/home/nishtala/code/movie_saved/"
 
 
-def save2df():
-    df = list2df()
+def save2df(load_dt='20120101'):
+    df = list2df(load_dt)
     # add load_dt column YYYYMMDD w/ today's date
-    df['load_dt'] = datetime.now().strftime("%Y%m%d")
+    df['load_dt'] = load_dt
     # partition based on load_dt
     df.to_parquet(PARQ_PATH, partition_cols=['load_dt'])
+    return df
 
-def list2df():
-    l = req2list()
+def list2df(load_dt='20120101'):
+    l = req2list(load_dt)
     df = pd.DataFrame(l)
     return df
 
-def req2list() -> list:
-    _, data = req()
+def req2list(load_dt='20120101') -> list:
+    _, data = req(load_dt)
     l = data['boxOfficeResult']['dailyBoxOfficeList']
     #print(l)
 
