@@ -13,10 +13,14 @@ $ pip install git+https://github.com/NishNovae/movie.git@<BRANCH>
 ```bash
 $ git clone <url>
 $ cd <DIR>
+$ source .venv/bin/activate
+$ pytest
 
 # option
 $ pdm venv create
-$ source .venv/bin/activate
 ```
 
-
+## Setting up running environment
+```bash
+$ cat ~/.zshrc | tail -n 3
+export MOVIE_API_KEY="<KEY>"

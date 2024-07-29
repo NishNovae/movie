@@ -1,11 +1,20 @@
 # call.py
 import requests
 import os
+import pandas as pd
 
-def req2dataframe():
+def list2df():
+    l = req2list()
+    df = pd.DataFrame(l)
+    return df
+
+def req2list() -> list:
     _, data = req()
     l = data['boxOfficeResult']['dailyBoxOfficeList']
-    print(l)
+    #print(l)
+
+    #df = pd.DataFrame(l)
+
     return l
 
 def get_key():
