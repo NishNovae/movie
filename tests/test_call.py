@@ -1,6 +1,12 @@
 # test_call.py
 # from src.mov.api.call import gen_url, req, get_key
 from src.mov.api.call import *
+import pandas as pd
+
+def test_save2df():
+    save2df()
+    df = pd.read_parquet('/home/nishtala/code/movie_saved/')
+    assert df is not None
 
 def test_hide_key():
     key = get_key()
@@ -13,10 +19,10 @@ def test_gen_url():
     assert "kobis" in url
 
 def test_req():
-    code, data = req()
+    code, _ = req()
     assert code == 200
 
-    code, data = req('20230101')
+    code, _ = req('20230101')
     assert code == 200
 
 def test_req2list():

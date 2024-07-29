@@ -2,6 +2,17 @@
 import requests
 import os
 import pandas as pd
+from datetime import datetime
+
+PARQ_PATH="/home/nishtala/code/movie_saved/"
+
+
+def save2df():
+    df = list2df()
+    # add load_dt column YYYYMMDD w/ today's date
+    df['load_dt'] = datetime.now().strftime("%Y%m%d")
+    # partition based on load_dt
+    df.to_parquet(PARQ_PATH, partition_cols=['load_dt'])
 
 def list2df():
     l = req2list()
