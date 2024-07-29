@@ -14,6 +14,7 @@ $ pip install git+https://github.com/NishNovae/movie.git@<BRANCH>
 $ git clone <url>
 $ cd <DIR>
 $ source .venv/bin/activate
+$ pdm install
 $ pytest
 
 # option
