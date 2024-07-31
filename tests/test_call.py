@@ -13,11 +13,9 @@ def test_hide_key():
     assert key
 
 def test_gen_url():
-    url = gen_url()
 
-    assert "http" in url
-    d = {"multiMovieYn": "N"}
-    url = gen_url(req_val = d)
+    url_param = {"multiMovieYn": "N"}
+    url = gen_url(url_param=url_param)
     assert "multiMovieYn" in url
 
 def test_req():

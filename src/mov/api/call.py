@@ -31,7 +31,7 @@ def list2df(load_dt='20120101', url_param={}):
     return df
 
 def req2list(load_dt='20120101', url_param={}) -> list:
-    _, data = req(load_dt, option=None)
+    _, data = req(load_dt, url_param=url_param)
     l = data['boxOfficeResult']['dailyBoxOfficeList']
     #print(l)
 
@@ -56,9 +56,9 @@ def gen_url(dt="20120101", url_param={}):
     url = f"{base_url}?key={key}&targetDt={dt}" 
 
     # KEY=VALUE
-    for key, value in req_val.items():
+    for key in url_param:
         #url += "&multiMovieYn=Y"
-        url += f"&{key}={value}"
+        url += f"&{key}={url_param[key]}"
 
     return url
 
