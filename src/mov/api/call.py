@@ -9,7 +9,7 @@ PARQ_PATH="/home/nishtala/code/movie_saved/"
 def echo(yaho):
     return yaho
 
-def apply_type2df(load_dt='20120101', path="~/tmp/test_parquet"):
+def apply_type2df(load_dt='20120101', path=PARQ_PATH):
     df = pd.read_parquet(f"{path}/load_dt={load_dt}")
     num_cols = ['rnum', 'rank', 'rankInten', 'salesAmt', 'audiCnt', 'audiAcc', 
                 'scrnCnt', 'showCnt', 'salesShare', 'salesInten', 'salesChange',
