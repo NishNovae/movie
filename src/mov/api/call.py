@@ -44,7 +44,7 @@ def get_key():
     return key
 
 def req(dt='20120101', url_param={}):
-    url = gen_url(dt)
+    url = gen_url(dt, url_param)
     r = requests.get(url)
     code = r.status_code
     data = r.json()
