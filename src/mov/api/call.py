@@ -56,11 +56,8 @@ def gen_url(dt="20120101", url_param={}):
     url = f"{base_url}?key={key}&targetDt={dt}" 
 
     # KEY=VALUE
-    for key in url_param:
+    for key, value in url_param.items():
         #url += "&multiMovieYn=Y"
-        url += f"&{key}={url_param[key]}"
+        url += f"&{key}={value}"
 
     return url
-
-
-
